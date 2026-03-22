@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>REWP Logbook(Recycling Empowered Waste Platform)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"    type="B">
+    <!-- Publicity Tier: Social Media Optimization -->
+<meta property="og:title" content="ac.io | REWP Production Dwelling">
+<meta property="og:description" content="Secure your Experience State. Concurrent chores, mining, and recycling sophistication.">
+<meta property="og:image" content="https://github.io">
+<meta property="og:url" content="https://github.io">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<script>
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+
+</head>
+<body>
+
+<div id="splash-screen" style="position:fixed; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle, #1a1a1a 0%, #080808 100%); z-index:10000; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.8s ease-in-out;">
+    
+    <!-- Unified Brand Section -->
+    <div style="text-align:center; margin-bottom:40px;">
+        <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05); display: inline-block; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+            <img src="icon-512.png" style="width:120px; height:120px; filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.2)); object-fit: contain;">
+        </div>
+        <h1 style="color:white; font-family:'Segoe UI', Roboto, sans-serif; font-weight:300; letter-spacing:6px; margin-top:20px; font-size:1.1rem; opacity:0.9;">REWP <span style="color:#00ff88; font-weight:700;">LOGBOOK</span></h1>
+    </div>
+
+    <!-- Progress UI -->
+    <div style="width:220px; height:3px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; margin-bottom:12px;">
+        <div id="boot-progress" style="width:0%; height:100%; background:linear-gradient(90deg, #00ff88, #00bd68); box-shadow: 0 0 15px rgba(0,255,136,0.5); transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+    </div>
+
+    <!-- Status with Processing Phases -->
+    <div id="boot-status" style="color:#00ff88; font-family:monospace; font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; min-height:15px;">
+        INITIALIZING... 0%
+    </div>
+
+    <!-- Hidden by default, appears after 3 seconds if needed -->
+    <button id="skip-btn" onclick="skipBoot()" style="margin-top:40px; background:none; border:none; color:#444; font-size:0.6rem; letter-spacing:1px; cursor:pointer; text-decoration:underline; display:none;">SKIP INITIALIZATION</button>
+</div>
+
+<!-- 1. The Interactive Header -->
+<header style="text-align: center; cursor: pointer;" onclick="toggleMenu()">
+    <h1 id="main-h1" style="border: 4px solid #2f3640; display: inline-block; padding: 10px 20px; background: #2d5a27; color: white;">
+        REWP LOGBOOK <span style="font-size: 0.5em;">[ OPEN REGISTRY ]</span>
+    </h1>
+</header>
+
+<!-- 2. The Sophisticated Pop-Up Menu (Hidden by default) -->
+<div id="popup-menu" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(47, 54, 64, 0.9); z-index: 1000;">
+    <div style="background: #f5f6fa; width: 80%; max-width: 400px; margin: 50px auto; border: 5px solid #2d5a27; padding: 20px; font-family: 'Courier New', monospace;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2f3640; padding-bottom: 10px;">
+            <h3 style="margin: 0;">ECOSYSTEM NAVIGATION</h3>
+            <button onclick="toggleMenu()" style="background: #2f3640; color: white; border: none; cursor: pointer;">[X] CLOSE</button>
+        </div>
+
+        <nav style="margin-top: 20px;">
+            <!-- FEATURE: GAIN ACCESS -->
+            <a href="registrar.html" class="menu-btn">1. GAIN ACCESS (CERTIFY)</a>
+
+            <!-- FEATURE: CLAIM FUEL -->
+            <button onclick="claimFuel()" class="menu-btn">2. CLAIM FUEL (DAILY REWARD)</button>
+
+            <!-- FEATURE: AD REVENUE TIER -->
+            <div style="margin-top: 20px; padding: 10px; border: 1px dashed #2d5a27;">
+                <p style="font-size: 0.7rem; margin: 0 0 10px 0;">WEB INCOME ENABLED (20% ADS):</p>
+                <button onclick="triggerAd()" class="menu-btn" style="background: #c2a13e;">SUPPORT PRODUCTION (WATCH AD)</button>
+            </div>
+        </nav>
+        
+        <p style="font-size: 0.6rem; color: #2d5a27; margin-top: 20px; text-align: center;">
+            * IDLE BUFFER: 24.25% SECURE *
+        </p>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('popup-menu');
+        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+    }
+
+    function claimFuel() {
+        alert("Fuel Settlement: +5 Units logged to StaticToken buffer.");
+        // Logic for mining fuel can be added here
+    }
+
+    function triggerAd() {
+        alert("Loading Ad-Break... (20% Revenue Settlement Processing)");
+        // Your Ad-Network code goes here
+    }
+</script>
+
+
+    <section class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <label style="margin-bottom:0;">Trip Setting</label>
+        <button onclick="openMarketingMap()" class="btn-search" title="Search nearby recycling places">🔍</button>
+    </div>
+    
+    <div class="stack-mobile">
+            <input type="number" id="distance" value="200" placeholder="km">
+            <input type="number" id="consuption" value="8.0" placeholder="L/100km">
+            <input type="number" id="fuelPrice" value="20.12" placeholder="R/L">
+        <!-- Action Buttons -->
+
+
+<!-- Simple Preview Modal -->
+<div id="previewModal" style="display:none; position:fixed; top:10%; left:10%; width:80%; height:80%; background:white; border:2px solid #333; z-index:1000; padding:20px; overflow-y:auto; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+    <h3>REWP Report Preview</h3>
+    <div id="previewContent" style="font-family: monospace; white-space: pre; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;"></div>
+    <button onclick="document.getElementById('previewModal').style.display='none'">Close Preview</button>
+</div>
+
+        </div>
+    </section>
+
+    <section class="card">
+        <label>Inventory Log</label>
+        <select id="matType">
+            <option value="150">Cellphone Boards (R150)</option>
+            <option value="120">RAM Sticks (R120)</option>
+            <option value="95">Bronze (R95)</option>
+            <option value="18">Stainless Steel (R18)</option>
+            <option value="4.50">Subgrade Sheets (R4.50)</option>
+            <option value="135">Copper Mix (R135.00)</option>
+            <optgroup label="Heavy Metals & Batteries">
+    <option value="12">Lead (R12/kg)</option>
+    <option value="10.50">Car Batteries (R10.50/kg)</option>
+    <option value="2.90">Steel(R2.90/kg)</option>
+    
+    <option value="85">Brass (R85/kg)</option>
+</optgroup>
+
+        </select>
+        <div class="input-row">
+            <input type="number" id="weight" placeholder="kg">
+            <button onclick="addItem()" class="btn-main">Add (Enter)</button>
+        </div>
+    </section>
+<section class="card summary">
+    <div class="stat-row"><span>Gross Revenue</span> <span id="gross">R0.00</span></div>
+
+    <!-- This container will hold the swapping items -->
+    <div id="dynamic-slot" style="transition: all 0.5s ease-in-out; overflow: hidden;">
+        
+        <!-- ITEM 1: FUEL COST -->
+        <div id="fuel-row" class="stat-row" style="color:var(--danger); opacity: 1;">
+            <span>Fuel Cost</span> <span id="travel">-R321.92</span>
+        </div>
+
+        <!-- ITEM 2: NOTIFICATION (Hidden by default) -->
+        <div id="alert-row" class="stat-row" style="color: #ffca28; display: none; opacity: 0;">
+            <span id="alert-text">Rest Area Suggestion</span> <span>Reached</span>
+        </div>
+        
+    </div>
+
+    <div class="net-profit">NET: <span id="netProfit">R3428.08</span></div>
+</section>
+ 
+        <div style="display: flex; gap: 10px; margin-top: 15px; width: 100%;">
+    <button onclick="previewReport()" class="btn-view" style="width: 30%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 5px;">View</button>
+    <button onclick="exportToCSV()" class="btn-export" style="width: 70%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 5px;">Export CSV</button>
+</div>
+<div id="previewModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content: center; align-items: center;">
+    <div style="background:white; width: 90%; max-width: 400px; padding: 20px; border-radius: 10px; color: #333;">
+        <h3 style="margin-top:0; border-bottom: 2px solid #eee; padding-bottom: 10px;">REWP Log Preview</h3>
+        
+        <!-- The Data Box -->
+        <div id="previewContent" style="font-family: monospace; background: #f8f9fa; padding: 15px; border-radius: 5px; max-height: 300px; overflow-y: auto; white-space: pre-wrap; font-size: 14px; border: 1px solid #ddd;">
+            <!-- DATA LOADS HERE -->
+        </div>
+
+        <label style="display:block; margin: 15px 0; color: #d9534f; font-size: 13px; font-weight: bold;">
+            <input type="checkbox" onchange="handleSignature(this)"> 
+            Confirm weights & 15% REWP deduction.
+        </label>
+
+        <div style="display: flex; gap: 10px;">
+            <button id="exportBtn" onclick="exportToCSV()" disabled style="flex: 2; padding: 10px; background: #28a745; color: white; border: none; opacity: 0.5;">Download</button>
+            <button onclick="document.getElementById('previewModal').style.display='none'" style="flex: 1; padding: 10px; background: #ccc; border: none;">Close</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- ADD THE FEED HERE (Below Export CSV, Inside Container) -->
+<section class="market-analysis-feed">
+    <div class="feed-container">
+        <div class="market-card">
+            <h4>Copper</h4>
+            <span class="price-up">↑ R135.50</span>
+            <small>Local Average</small>
+        </div>
+        <div class="market-card">
+            <h4>Aluminum</h4>
+            <span class="price-down">↓ R12.00</span>
+            <small>Down</small>
+        </div>
+        <div class="market-card">
+            <h4>Steel</h4>
+            <span class="price-stable">→ R5.50</span>
+            <small>Stable</small>
+        </div>
+    </div>
+</section>
+<!-- End of .container -->
+<!-- Reminder / Notifier Pop-up -->
+<div id="walletPopup" class="wallet-overlay">
+    <div class="wallet-content">
+        <!-- 1. Header & Progress -->
+        <div class="market-header">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <small>REWP WALLET</small>
+                <span id="totalWeight" class="weight-badge">0 kg Total Load</span>
+            </div>
+            <div id="marketWatch"></div>
+        </div>
+
+        <h3>Trip Progress</h3>
+        <div class="goal-container">
+            <div id="goalText" style="font-size:0.8rem; margin-bottom:5px;">0% Covered</div>
+            <div class="goal-bg"><div id="goalFill" class="goal-fill"></div></div>
+        </div>
+
+        <div id="routineFeed" style="background: rgba(0,0,0,0.2); border-left: 3px solid #007bff; padding: 10px; margin: 10px 0; font-size: 0.8rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span id="stepLabel">📡 Connecting to Market...</span>
+        <span id="etaTime" style="color:#00ff88;">ETA: --:--</span>
+    </div>
+</div>
+
+        <!-- 2. History List (Scrollable Area) -->
+        <div id="historyList" class="history-scroll" style="flex-grow: 1;">
+            <!-- Inside your history rendering loop -->
+<div class="card history-item">
+    <div class="stat-row">
+        <!-- Add the captured weight here -->
+        <span class="category-name">Copper Mix (${item.weight}kg)</span>
+        <span class="price-value">R${item.gross}</span>
+    </div>
+    <div class="sub-stats">
+        <span>Net: R${item.net}</span>
+        <span style="color:var(--danger)"> (Fuel: -R${item.fuel})</span>
+    </div>
+    <button class="delete-btn">×</button>
+</div>
+
+        </div>
+
+        <!-- 3. Alert Settings Section (Added here) -->
+        <div class="alert-section" style="padding: 10px; background: rgba(255,255,255,0.05); border-4: 8px; margin-bottom: 10px;">
+            <h4 style="margin: 0 0 8px 0; font-size: 0.9rem;">🔔 Alert Settings</h4>
+            <div style="display: flex; gap: 5px;">
+                <input type="number" id="targetInput" placeholder="Target (R)" style="flex: 1; padding: 5px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+                <button onclick="saveReminder()" class="btn-main" style="padding: 5px 10px;">Save</button>
+                <button onclick="testAlert()" class="btn-alt" style="background:#444; padding: 5px 10px;">Test</button>
+            </div>
+        </div>
+
+        <!-- Recycler Information Panel -->
+<div id="infoContent" style="display:none; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 8px; border: 1px solid #444; margin-bottom: 15px; font-size: 0.85rem;">
+    <h4 style="color:#00ff88; margin-top:0;">📋 Recycler Dashboard</h4>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; color: #ccc;">
+        <div>
+            <p><strong>🕒 Open:</strong> 07:30 - 17:00 <br><small>(Sat/Holidays: 13:00)</small></p>
+            <p><strong>🛠 Required:</strong> ID/Passport + Proof of Residence</p>
+            <p><strong>⚠️ Notice:</strong> 21 March (Human Rights Day) Early Close</p>
+        </div>
+        <div>
+            <p><strong>🚦 Traffic:</strong> <span id="trafficStatus">Calculating...</span></p>
+            <p><strong>📅 Ad's Day:</strong> Every Monday <br><small>(Price updates)</small></p>
+            <p><strong>💰 Payout:</strong> EFT/Bank Only <br><small>(No cash allowed)</small></p>
+        </div>
+    </div>
+    
+    <hr style="border:0; border-top:1px solid #333; margin:10px 0;">
+    <p style="margin-bottom:0;"><strong>📈 Market Analysis:</strong> Copper (Shiny) stable at R149/kg; Aluminium Cans rising.</p>
+</div>
+
+        <!-- ... previous code ... -->
+        <div class="wallet-actions" style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
+            <button onclick="clearHistory()" class="btn-danger" style="width: 100%;">Clear History</button>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button onclick="toggleRecyclerInfo()" class="btn-alt" style="background: #2a2a2a; border: 1px solid #444;">📋 Recycler</button>
+                <button onclick="toggleWallet()" class="btn-hide" style="margin: 0;">Hide Wallet</button>
+            </div>
+            <button onclick="openAllowance()" class="btn-main" style="background: #007bff; width: 100%;">💰 Manage Allowance</button>
+        </div>
+    </div> <!-- Closes wallet-content -->
+</div> <!-- Closes wallet-overlay -->
+<!-- Allowance & Budget Modal -->
+<div id="allowanceModal" class="wallet-overlay" style="display:none; z-index: 10001;">
+    <div class="wallet-content" style="max-height: 85vh; overflow-y: auto;">
+        <h2 style="color:#00ff88; margin-top:0;">🛡️ Financial Hub</h2>
+        
+        <!-- Category Tabs -->
+        <div style="display: flex; gap: 5px; margin-bottom: 15px; overflow-x: auto; padding-bottom: 5px;">
+            <button onclick="showTab('daily')" class="btn-alt" style="font-size:0.7rem;">Daily/Trip</button>
+            <button onclick="showTab('objectives')" class="btn-alt" style="font-size:0.7rem;">Objectives</button>
+            <button onclick="showTab('budget')" class="btn-alt" style="font-size:0.7rem;">Budget Sheet</button>
+        </div>
+
+        <!-- Financial Summary Section -->
+<div id="financial-summary">
+    <p>Gross Revenue: <span id="gross">R 0.00</span></p>
+    <p>Travel/Fuel: <span id="travel">- R 0.00</span></p>
+    
+    <!-- New Deduction Row -->
+    <p style="color: #d9534f; font-weight: bold;">
+        REWP Emergency Contribution (15%): <span id="rewp-deduction">R 0.00</span>
+    </p>
+    
+    <hr>
+    <p>Final Net Profit: <span id="netProfit">R 0.00</span></p>
+</div>
+
+        <div id="ppeChecklist" style="margin-top: 15px; padding: 10px; background: rgba(255, 68, 68, 0.1); border: 1px solid #ff4444; border-radius: 8px;">
+    <h5 style="color:#ff4444; margin:0 0 10px 0;">🛡️ PPE Safety Checklist</h5>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.8rem;">
+        <label><input type="checkbox" id="ppe-boots" onchange="checkSafetyStatus()"> Steel Boots</label>
+        <label><input type="checkbox" id="ppe-vest" onchange="checkSafetyStatus()"> Hi-Viz Vest</label>
+        <label><input type="checkbox" id="ppe-gloves" onchange="checkSafetyStatus()"> Heavy Gloves</label>
+        <label><input type="checkbox" id="ppe-id" onchange="checkSafetyStatus()"> Original ID</label>
+    </div>
+</div>
+
+        <!-- TAB 1: Daily/Trip Expenses -->
+        <div id="tab-daily" class="tab-content">
+            <h4>⛽ Trip Expenses</h4>
+            <div class="input-group">
+                <input type="number" id="exp-food" placeholder="Food/Drinks (R)">
+                <input type="number" id="exp-rest" placeholder="Rest Area/Tolls (R)">
+                <input type="number" id="exp-trouble" placeholder="Troubleshooter/Emergency (R)">
+            </div>
+        </div>
+
+        <!-- TAB 2: Objectives & Safety -->
+        <div id="tab-objectives" class="tab-content" style="display:none;">
+            <h4>🎯 Growth & Safety</h4>
+            <div class="input-group">
+                <input type="number" id="exp-safety" placeholder="Safety Allowance (R)">
+                <input type="number" id="exp-referral" placeholder="Referral (Underage) (R)">
+                <input type="text" id="new-objective" placeholder="Next Objective (e.g. New Truck)">
+            </div>
+        </div>
+
+        <!-- TAB 3: Budget Sheet (Assets & Long-term) -->
+        <div id="tab-budget" class="tab-content" style="display:none;">
+            <h4>📊 Asset Management</h4>
+            <small>Assets</small>
+            <div class="input-group">
+                <input type="number" id="asset-fixed" placeholder="Fixed Assets (Tools/Land)">
+                <input type="number" id="asset-short" placeholder="Short Assets (Scrap Stock)">
+            </div>
+            <small>Professional Allowances</small>
+            <div class="input-group">
+                <input type="number" id="all-edu" placeholder="Educational/Skills">
+                <input type="number" id="all-occ" placeholder="Occupational/Gear">
+                <button onclick="saveBudget()" class="btn-main" style="width:100%; margin-top:10px;">Save Budget Sheet</button>
+            </div>
+        </div>
+
+        <button onclick="closeAllowance()" class="btn-hide" style="width:100%; margin-top:20px;">Return to Wallet</button>
+    </div>
+</div>
+
+<!-- THIS BUTTON MUST BE OUTSIDE ALL OTHER DIVS -->
+<button class="fab" id="mainFab" onclick="toggleWallet()" style="display: block !important;">💰</button>
+
+
+<!-- Industrial Entry Button for ac.io Ecosystem -->
+
+<!-- Core Inventory & Calculations (Must load first) -->
+<script src="dropper.js"></script> 
+
+<!-- Financial & Asset Management -->
+<script src="tracker.js" defer></script>
+
+<!-- Live Networking & Trip Steps (Depends on UI elements) -->
+<script src="routine.js" defer></script> 
+
+<!-- Market Data Analysis -->
+<script src="marketer.js" defer></script>
+
+<!-- Export Tools (Depends on final inventory data) -->
+<script src="exporter.js" defer></script>
+</body>
+</html>
