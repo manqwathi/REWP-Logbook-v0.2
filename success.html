@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REWP | Verification Settled</title>
+    <style>
+        :root {
+            --eco-green: #2d5a27;
+            --industrial-grey: #2f3640;
+            --paper-white: #f5f6fa;
+            --accent-gold: #c2a13e;
+        }
+/* Industrial Eco-System Theme */
+body { 
+    background-color: #f5f6fa; 
+    font-family: 'Courier New', monospace; 
+    color: #2f3640; 
+    padding: 20px;
+    border: 10px solid #2d5a27; /* Green Eco-Frame */
+}
+.form-container, .success-container {
+    background: #fff;
+    padding: 2rem;
+    border: 3px solid #2f3640;
+    box-shadow: 8px 8px 0px #2d5a27;
+}
+
+ 
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 40px;
+            background: white;
+            box-shadow: 10px 10px 0px var(--industrial-grey); /* Sophisticated brutalist shadow */
+        }
+
+        h1 {
+            color: var(--eco-green);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 2px solid var(--eco-green);
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            background: var(--eco-green);
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .countdown {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .btn-return {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: var(--industrial-grey);
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-return:hover {
+            background: var(--eco-green);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>REWP SETTLED</h1>
+    <div class="status-badge">EXPERIENCE STATE: PENDING AUDIT</div>
+    <p>Your certified documents have been successfully logged into the <strong>ac.io</strong> ecosystem.</p>
+    <p>Our <strong>10% Maintenance</strong> tier is currently verifying your credentials for <strong>Project Settlement</strong> access.</p>
+    
+    <p>Redirecting to dashboard in <span id="timer" class="countdown">5</span>s...</p>
+    
+    <a href="index.html" class="btn-return">RETURN TO LOGBOOK NOW</a>
+</div>
+<!-- Viral Publicity Component -->
+<div style="margin-top: 20px; border: 2px dashed #c2a13e; padding: 15px;">
+    <p style="font-size: 0.8rem;">PROMOTING THE ECOSYSTEM (+30% PUBLICITY):</p>
+    <a href="https://twitter.com:" 
+       target="_blank" 
+       style="background: #1DA1F2; color: white; padding: 10px; text-decoration: none; font-size: 0.7rem;">
+       SHARE ON X (TWITTER)
+    </a>
+</div>
+
+<script>
+    // Automatic redirection logic
+    let count = 5;
+    const timer = document.getElementById('timer');
+    const countdown = setInterval(() => {
+        count--;
+        timer.innerText = count;
+        if (count <= 0) {
+            clearInterval(countdown);
+            window.location.href = "index.html";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
