@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ac.io | Experience State Registrar</title>
+    <style>
+        :root {
+            --eco-green: #2d5a27;
+            --industrial-grey: #2f3640;
+            --paper-white: #f5f6fa;
+            --border-width: 4px;
+        }
+/* Industrial Eco-System Theme */
+body { 
+    background-color: #f5f6fa; 
+    font-family: 'Courier New', monospace; 
+    color: #2f3640; 
+    padding: 20px;
+    border: 10px solid #2d5a27; /* Green Eco-Frame */
+}
+.form-container, .success-container {
+    background: #fff;
+    padding: 2rem;
+    border: 3px solid #2f3640;
+    box-shadow: 8px 8px 0px #2d5a27;
+}
+
+ 
+        .form-container {
+            background: white;
+            border: var(--border-width) solid var(--industrial-grey);
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 10px 10px 0px var(--eco-green);
+        }
+
+        h2 {
+            background: var(--industrial-grey);
+            color: white;
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+
+        label { font-weight: bold; margin-bottom: 5px; text-transform: uppercase; font-size: 0.8rem; }
+
+        input, select {
+            padding: 12px;
+            border: 2px solid var(--industrial-grey);
+            background: var(--paper-white);
+            font-family: inherit;
+        }
+
+        .upload-section {
+            border: 2px dashed var(--eco-green);
+            padding: 15px;
+            background: #f0f4f0;
+            margin-bottom: 20px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--eco-green);
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover { background: var(--industrial-grey); }
+
+        .consent { font-size: 0.7rem; display: flex; align-items: flex-start; gap: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Experience State Verification</h2>
+    
+    <!-- Replace YOUR_ID with your Formspree ID -->
+    <form action="https://formspree.io" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label>Full Legal Name</label>
+            <input type="text" name="name" placeholder="As shown on documents" required>
+        </div>
+
+        <div class="form-group">
+            <label>Target Experience State</label>
+            <select name="target_state" required>
+                <option value="entry">Entry (Standard Access)</option>
+                <option value="certified">Certified (Project Settlement)</option>
+                <option value="founder">Founder (Ecosystem Control)</option>
+            </select>
+        </div>
+
+        <div class="upload-section">
+            <label>Upload Certified Document</label>
+            <p style="font-size: 0.6rem; margin: 0 0 10px 0;">Required for 'Certified' and 'Founder' states (PDF/JPG).</p>
+            <input type="file" name="upload" accept=".pdf,.jpg,.jpeg" required>
+        </div>
+
+        <div class="form-group consent">
+            <input type="checkbox" name="masking_consent" required>
+            <span>I consent to secure document masking for ac.io internal audits and 10% maintenance verification.</span>
+        </div>
+
+        <!-- This hidden field ensures it redirects to your success page -->
+        <input type="hidden" name="_next" value="https://github.io">
+
+        <button type="submit" class="btn-submit">Submit for Verification</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "short_name": "REWP",
+  "name": "REWP Logbook Analyser",
+  "icons":,
+  "start_url": "index.html",
+  "background_color": "#0a0a0a",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#00ff88"
+}
